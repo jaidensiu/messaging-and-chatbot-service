@@ -56,26 +56,6 @@ const index = () => {
     }
   }
 
-  const submitLogoutHandler = async (e: React.SyntheticEvent) => {
-    e.preventDefault()
-
-    try {
-      setRoomName('')
-      const res = await fetch(`${API_URL}/logout`, {
-        method: 'GET',
-        credentials: 'include',
-      })
-
-      if (res.ok) {
-        router.push('/login');
-      } else {
-        console.log('Logout failed');
-      }
-    } catch (err) {
-      console.log(err)
-    }
-  }
-
   const joinRoom = (roomId: string) => {
     const ws = new WebSocket(
       `${WEBSOCKET_URL}/ws/joinRoom/${roomId}?userId=${user.id}&username=${user.username}`
@@ -103,12 +83,6 @@ const index = () => {
             onClick={submitCreateRoomHandler}
           >
             create room
-          </button>
-          <button
-            className='bg-blue border text-white rounded-md p-2 md:ml-4'
-            onClick={submitLogoutHandler}
-          >
-            logout
           </button>
         </div>
         <div className='mt-6'>
