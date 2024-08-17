@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"server/db"
+	"server/internal/chatbot"
 	"server/internal/user"
 	"server/internal/ws"
 	"server/router"
@@ -20,8 +21,9 @@ func main() {
 
 	hub := ws.NewHub()
 	wsHandler := ws.NewHandler(hub)
+	chatbotHandler := chatbot.NewHandler()
 	go hub.Run()
 
-	router.InitRouter(userHandler, wsHandler)
+	router.InitRouter(userHandler, wsHandler, chatbotHandler)
 	router.Start("0.0.0.0:8080")
 }
