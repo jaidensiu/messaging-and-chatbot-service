@@ -1,11 +1,12 @@
-# Gopher-Chat
+# Real-Time Messaging and AI Chatbot Service
 
-## Database Schema
+## Project details
+- TODO
 
+## Database schema
 ![Database schema](assets/db_schema.png)
 
-## Tech Stack
-
+## Tech stack
 - Go
 - PostgreSQL
 - Gin
@@ -13,5 +14,5 @@
 - Cohere API
 
 ## References
-- [psql CLI basics](https://tomcam.github.io/postgres/)
-- [Cohere API Docs](https://docs.cohere.com/reference/about)
+- [psql tutorial](https://tomcam.github.io/postgres/)
+- [Cohere API docs](https://docs.cohere.com/reference/about)
