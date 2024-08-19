@@ -43,7 +43,7 @@ func NewHandler() *Handler {
 func (h *Handler) StreamMessage(c *gin.Context) {
 	var chatReq ChatRequest
 	if err := c.ShouldBindJSON(&chatReq); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid request payload"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -63,7 +63,7 @@ func (h *Handler) StreamMessage(c *gin.Context) {
 	)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to get response from Cohere"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 	defer resp.Close()
@@ -76,7 +76,7 @@ func (h *Handler) StreamMessage(c *gin.Context) {
 		}
 
 		if err != nil {
-			c.JSON(http.StatusInternalServerError, gin.H{"error": "Error reading from stream"})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return false
 		}
 
@@ -85,7 +85,7 @@ func (h *Handler) StreamMessage(c *gin.Context) {
 				Text: message.TextGeneration.Text,
 			}
 			if err := json.NewEncoder(w).Encode(cohereResp); err != nil {
-				c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to encode response"})
+				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 				return false
 			}
 		}
