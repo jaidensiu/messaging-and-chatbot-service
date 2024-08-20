@@ -1,4 +1,4 @@
-# Real-Time Messaging and AI Chatbot Service
+# Gopher Chat
 
 ## Project details
 This project is a simple real-time messaging and AI chatbot backend application written in Go. The scope of the project
