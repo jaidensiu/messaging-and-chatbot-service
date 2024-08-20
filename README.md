@@ -10,9 +10,6 @@ includes:
 - a Gin router to handle HTTP routes and middleware for the REST API
 - a password encryption and verification utility to securely store passwords
 
-## Database schema
-![Database schema](assets/db_schema.png)
-
 ## Tech stack
 - Go
 - PostgreSQL
