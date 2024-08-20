@@ -5,8 +5,9 @@ This project is a simple real-time messaging and AI chatbot backend application 
 includes:
 - a layered-architecture with clear separation of concerns from the data access layer to API endpoints
 - a cookie-based JWT implementation for login authentication
-- a WebSocket connection for real-time and bi-directional communication between a client and the server
+- a Gorilla WebSocket for full-duplex communication over a TCP connection
 - a handler to process message streaming from the Cohere API
+- a Gin router to handle HTTP routes and middleware for the REST API
 
 ## Database schema
 ![Database schema](assets/db_schema.png)
