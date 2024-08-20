@@ -1,9 +1,10 @@
 # Gopher Chat
 
+![gophers_chatting](assets/gopher_chat.jpg)
+
 ## Project details
-This project is a simple real-time messaging and AI chatbot backend application written in Go. The scope of the project
+This project features a simple real-time messaging and AI chatbot backend service written in Go. The scope of the project
 includes:
-- a layered-architecture with clear separation of concerns from the data access layer to API endpoints
 - a cookie-based JWT implementation for login authentication
 - a Gorilla WebSocket for full-duplex communication over a TCP connection
 - a handler to process message streaming from the Cohere API
