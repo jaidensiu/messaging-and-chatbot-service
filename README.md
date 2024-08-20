@@ -8,6 +8,7 @@ includes:
 - a Gorilla WebSocket for full-duplex communication over a TCP connection
 - a handler to process message streaming from the Cohere API
 - a Gin router to handle HTTP routes and middleware for the REST API
+- a password encryption and verification utility to securely store passwords
 
 ## Database schema
 ![Database schema](assets/db_schema.png)
@@ -22,4 +23,5 @@ includes:
 
 ## References
 - [psql tutorial](https://tomcam.github.io/postgres/)
+- [Go Password Hashing](https://gowebexamples.com/password-hashing/)
 - [Cohere API docs](https://docs.cohere.com/reference/about)
