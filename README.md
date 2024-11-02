@@ -1,4 +1,4 @@
-# Gopher Chat
+# Messaging and Chatbot Service
 
 ![gophers_chatting](assets/gopher_chat.jpg)
 
